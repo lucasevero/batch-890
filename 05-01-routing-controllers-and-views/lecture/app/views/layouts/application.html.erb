@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MyFirstProject</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav style="padding: 16px; background-color: #999;">
+      <%= link_to "Meet our project", about_path %>
+      <%= link_to "Contact us", contact_path %>
+      <form action="/contact" method="get">
+        <input type="text" name="member" placeholder="Who are you looking for?" value="<%= params[:member] %>">
+        <input type="text" name="quantity" placeholder="Who are you looking for?">
+        <input type="submit">
+      </form>
+    </nav>
+
+    <!-- 👇 The Template -->
+    <%= yield %>
+
+    <!-- NOTE:
+    yield is going to import the view (template) and put it inside of the body of this file (`application.html.erb`)
+    Due to that, in here you can put a navbar (or a footer, or a logo, etc) which is going to be appear all your files -->
+  </body>
+</html>
