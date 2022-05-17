@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   get '/pets/new', to: 'pets#new'
   post '/pets', to: 'pets#create'
 
+  get '/pets/:id/edit', to: 'pets#edit'
+  patch '/pets/:id', to: 'pets#update'
+
   get '/pets/:id', to: 'pets#show', as: 'pet'
 
 end
