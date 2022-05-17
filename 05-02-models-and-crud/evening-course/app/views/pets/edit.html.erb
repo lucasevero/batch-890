@@ -1,13 +1,1 @@
-<%= form_for(@pet) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :species %>
-  <%= f.text_field :species %>
-  <%= f.label :color %>
-  <%= f.text_field :color %>
-  <%= f.label :address %>
-  <%= f.text_field :address %>
-  <%= f.label :date %>
-  <%= f.date_field :date %>
-  <%= f.submit %>
-<% end %>
+<%= render 'form' %>
