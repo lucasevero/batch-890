@@ -3,3 +3,20 @@
     <h1><%= @garden.name %></h1>
   </div>
 </div>
+<div class="container mt-5">
+  <ul>
+    <% @plants.each do |plant| %>
+      <div class="card-category my-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= plant.image_url %>)">
+      <h3><%= plant.name %></h3>
+      <%= link_to "🗑", plant_path(plant), method: :delete, data: { confirm: "Are you sure?"} %>
+    </div>
+    <% end %>
+  </ul>
+  <h2>Add a plant:</h2>
+  <%# we want to send a request to '/gardens/:garden_id/plants' %>
+  <%= simple_form_for([@garden, @plant]) do |f| %>
+    <%= f.input :name, placeholder: "pau-brasil" %>
+    <%= f.input :image_url, placeholder: "https:your_image_url.com.de" %>
+    <%= f.submit "Add", class: "btn btn-primary" %>
+  <% end %>
+</div>
