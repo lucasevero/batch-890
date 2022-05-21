@@ -1,6 +1,12 @@
-<h1>Add a new tag to <%= @plant.name %></h1>
-<%= simple_form_for([@plant, @plant_tag]) do |f| %>
-  <%= f.input :tag, collection: Tag.all, input_html: { multiple: true, data: { controller: "select2" } } %>
-  <%= f.submit %>
-<% end %>
-<%= link_to "Go back!", garden_path(@plant.garden) %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8">
+      <h1>Add a new tag to <%= @plant.name %></h1>
+      <%= simple_form_for([@plant, @plant_tag]) do |f| %>
+        <%= f.input :tag, collection: Tag.all, input_html: { multiple: true, data: { controller: "select2" } } %>
+        <%= f.submit %>
+      <% end %>
+      <%= link_to "Go back!", garden_path(@plant.garden) %>
+    </div>
+  </div>
+</div>
